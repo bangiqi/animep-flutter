@@ -35,6 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
         _horizontalAnimeList('summer'),
         _horizontalAnimeList('fall'),
         _horizontalAnimeList('winter'),
+
+        SizedBox(
+          height: 16,
+        )
       ]),
     );
   }
