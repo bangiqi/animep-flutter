@@ -35,16 +35,15 @@ class _HomeScreenState extends State<HomeScreen> {
           height: 8.0,
         ),
 
-        _horizontalAnimeList(),
-        _horizontalAnimeList(),
-        _horizontalAnimeList(),
-        _horizontalAnimeList(),
-        _horizontalAnimeList(),
+        _horizontalAnimeList('spring'),
+        _horizontalAnimeList('summer'),
+        _horizontalAnimeList('fall'),
+        _horizontalAnimeList('winter'),
       ]),
     );
   }
 
-  Widget _horizontalAnimeList() {
+  Widget _horizontalAnimeList(String session) {
     return Column(
       children: [
         // section list widget
@@ -52,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
         // horizontal list anime widget
         SizedBox(
           height: 275.0,
-          child: _trendingAnimeListFuture(),
+          child: _trendingAnimeListFuture(session),
         ),
         SizedBox(
           height: 8.0,
@@ -61,9 +60,9 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  FutureBuilder<List<Anime>> _trendingAnimeListFuture() {
+  FutureBuilder<List<Anime>> _trendingAnimeListFuture(String session) {
     return FutureBuilder<List<Anime>>(
-      future: HomeInteractor.fetchTrendingAnime(http.Client(), 'spring'),
+      future: HomeInteractor.fetchTrendingAnime(http.Client(), session),
       builder: (context, snapshot) {
         if (snapshot.hasError) print(snapshot.error);
 
