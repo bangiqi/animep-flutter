@@ -9,8 +9,8 @@ import 'dart:async';
 class HomeInteractor {
   static Future<List<Anime>> fetchTrendingAnime(
       http.Client client, String season) async {
-    final response = await client.get(Uri.parse(
-        '${AppLinks.baseURL}${AppLinks.path}/anime?filter[season]=$season'));
+    final response = await client
+        .get(Uri.parse('${AppLinks.baseURL}${AppLinks.path}/trending/anime'));
 
     return compute(parseAnime, response.body);
   }

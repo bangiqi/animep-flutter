@@ -63,14 +63,6 @@ class HomeAnimeListWidget extends StatelessWidget {
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.grey[800]))),
-                      SizedBox(
-                        height: 4,
-                      ),
-                      Text(
-                        'Rate : 7.5',
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w400),
-                      ),
                     ],
                   ),
                 ),
