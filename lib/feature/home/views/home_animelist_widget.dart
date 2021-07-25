@@ -15,8 +15,14 @@ class HomeAnimeListWidget extends StatelessWidget {
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: listAnime.length,
-        itemBuilder: (BuildContext context, int index) =>
-            _buildItemsForListView(context, index));
+        itemBuilder: (BuildContext context, int index) => InkWell(
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              child: _buildItemsForListView(context, index),
+              onTap: () {
+                print('menuju ke halaman detail');
+              },
+            ));
   }
 
   Padding _buildItemsForListView(BuildContext context, int index) {
