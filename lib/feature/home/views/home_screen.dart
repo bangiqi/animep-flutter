@@ -31,10 +31,6 @@ class _HomeScreenState extends State<HomeScreen> {
           child: SearchBarTextfieldWidget(filter: _filter),
         ),
 
-        SizedBox(
-          height: 8.0,
-        ),
-
         _horizontalAnimeList('spring'),
         _horizontalAnimeList('summer'),
         _horizontalAnimeList('fall'),
