@@ -31,10 +31,11 @@ class _HomeScreenState extends State<HomeScreen> {
           child: SearchBarTextfieldWidget(filter: _filter),
         ),
 
-        _horizontalAnimeList('spring'),
-        _horizontalAnimeList('summer'),
-        _horizontalAnimeList('fall'),
-        _horizontalAnimeList('winter'),
+        _horizontalAnimeList('Trending Anime', null), // request trending anime
+        _horizontalAnimeList('Anime Season Spring', 'spring'),
+        _horizontalAnimeList('Anime Season Summer', 'summer'),
+        _horizontalAnimeList('Anime Season Fall', 'fall'),
+        _horizontalAnimeList('Anime Season Winter', 'winter'),
 
         SizedBox(
           height: 16,
@@ -43,15 +44,17 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _horizontalAnimeList(String session) {
+  Widget _horizontalAnimeList(String title, String? filter) {
     return Column(
       children: [
         // section list widget
-        SectionListWidget(),
+        SectionListWidget(
+          title: title,
+        ),
         // horizontal list anime widget
         SizedBox(
           height: 260.0,
-          child: _trendingAnimeListFuture(session),
+          child: _animeListFutureBuilder(filter),
         ),
         SizedBox(
           height: 4.0,
@@ -60,9 +63,12 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  FutureBuilder<List<Anime>> _trendingAnimeListFuture(String session) {
+  FutureBuilder<List<Anime>> _animeListFutureBuilder(String? filter) {
+    http.Client httpClient = http.Client();
     return FutureBuilder<List<Anime>>(
-      future: HomeInteractor.fetchTrendingAnime(http.Client(), session),
+      future: (filter != null)
+          ? HomeInteractor.fetchAnimeBySeason(httpClient, filter)
+          : HomeInteractor.fetchAnimeByTrending(httpClient),
       builder: (context, snapshot) {
         if (snapshot.hasError) print(snapshot.error);
 
