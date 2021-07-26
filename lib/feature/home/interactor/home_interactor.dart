@@ -7,8 +7,15 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 
 class HomeInteractor {
-  static Future<List<Anime>> fetchTrendingAnime(
-      http.Client client, String season) async {
+  static Future<List<Anime>> fetchAnimeBySeason(
+      http.Client client, String filter) async {
+    final response = await client.get(Uri.parse(
+        '${AppLinks.baseURL}${AppLinks.path}/anime?filter[season]=$filter'));
+
+    return compute(parseAnime, response.body);
+  }
+
+  static Future<List<Anime>> fetchAnimeByTrending(http.Client client) async {
     final response = await client
         .get(Uri.parse('${AppLinks.baseURL}${AppLinks.path}/trending/anime'));
 

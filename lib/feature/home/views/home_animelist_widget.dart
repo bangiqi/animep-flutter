@@ -1,3 +1,4 @@
+import 'package:animep_flutter/feature/detail/views/detail_screen.dart';
 import 'package:animep_flutter/models/Anime.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +21,9 @@ class HomeAnimeListWidget extends StatelessWidget {
               highlightColor: Colors.transparent,
               child: _buildItemsForListView(context, index),
               onTap: () {
-                print('menuju ke halaman detail');
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return DetailScreen(listAnime[index]);
+                }));
               },
             ));
   }
@@ -60,7 +63,7 @@ class HomeAnimeListWidget extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           style: GoogleFonts.poppins(
                               textStyle: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.grey[800]))),
                     ],
