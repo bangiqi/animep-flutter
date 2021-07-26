@@ -1,5 +1,6 @@
 import 'package:animep_flutter/feature/about/views/about_screen.dart';
 import 'package:animep_flutter/feature/home/views/home_screen.dart';
+import 'package:animep_flutter/feature/manga/views/manga_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -18,10 +19,7 @@ class _MainTabBarState extends State<MainTabBarScreen> {
 
   static List<Widget> _widgetOptions = <Widget>[
     HomeScreen('Home'),
-    Text(
-      'Manga',
-      style: optionStyle,
-    ),
+    MangaScreen('Manga'),
     AboutScreen('About'),
   ];
 
