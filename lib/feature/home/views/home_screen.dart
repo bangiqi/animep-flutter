@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
         SectionListWidget(),
         // horizontal list anime widget
         SizedBox(
-          height: 250.0,
+          height: 260.0,
           child: _trendingAnimeListFuture(session),
         ),
         SizedBox(

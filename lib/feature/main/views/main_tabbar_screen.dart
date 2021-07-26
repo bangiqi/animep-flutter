@@ -1,3 +1,4 @@
+import 'package:animep_flutter/feature/about/views/about_screen.dart';
 import 'package:animep_flutter/feature/home/views/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -21,10 +22,7 @@ class _MainTabBarState extends State<MainTabBarScreen> {
       'Manga',
       style: optionStyle,
     ),
-    Text(
-      'About',
-      style: optionStyle,
-    ),
+    AboutScreen('About'),
   ];
 
   void _onItemTapped(int index) {
