@@ -27,6 +27,7 @@ class _AboutScreenState extends State<AboutScreen> {
         _separatorLine(),
         _sectionHeaderTitle('Resources'),
         _listResourceLink('Public API', 'https://kitsu.docs.apiary.io/#'),
+        _listResourceLink('Icon', 'https://bit.ly/3708gJt'),
         _separatorLine(),
         _sectionHeaderTitle('Package'),
         _listResourceLink('http', 'https://pub.dev/packages/http'),
