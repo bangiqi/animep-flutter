@@ -1,4 +1,5 @@
 import 'package:animep_flutter/feature/about/views/about_screen.dart';
+import 'package:animep_flutter/feature/base/components/custom_appbar.dart';
 import 'package:animep_flutter/feature/home/views/home_screen.dart';
 import 'package:animep_flutter/feature/manga/views/manga_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,24 +15,18 @@ class MainTabBarScreen extends StatefulWidget {
 
 class _MainTabBarState extends State<MainTabBarScreen> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 18, fontWeight: FontWeight.normal);
-
   static List<Widget> _widgetOptions = <Widget>[
     HomeScreen('Home'),
     MangaScreen('Manga'),
     AboutScreen('About'),
   ];
 
+  static List<String> _titleMenus = <String>['anime', 'manga', 'about'];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
-  }
-
-  @override
-  void initState() {
-    super.initState();
   }
 
   @override
@@ -41,8 +36,10 @@ class _MainTabBarState extends State<MainTabBarScreen> {
       title: 'Main TabBar',
       theme: ThemeData(primaryColor: Colors.red),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
+        appBar: CustomAppBar(
+          title: _titleMenus.elementAt(_selectedIndex),
+          isDetail: false,
+          context: context,
         ),
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),
@@ -51,11 +48,12 @@ class _MainTabBarState extends State<MainTabBarScreen> {
             items: [
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Anime'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.business), label: 'Manga'),
-              BottomNavigationBarItem(icon: Icon(Icons.school), label: 'About'),
+                  icon: Icon(Icons.import_contacts), label: 'Manga'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.contact_page), label: 'About'),
             ],
             currentIndex: _selectedIndex,
-            selectedItemColor: Colors.amber[800],
+            selectedItemColor: Colors.red[600],
             onTap: _onItemTapped),
       ),
     );

@@ -21,8 +21,8 @@ class _AboutScreenState extends State<AboutScreen> {
       child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
         _userBiographyWidget(),
         _separatorLine(),
-        _sectionHeaderTitle('Account'),
-        _listResourceLink('Github', 'https://github.com/bangiqi'),
+        _sectionHeaderTitle('Developer'),
+        _listResourceLink('Rizki Ramdani', 'https://github.com/bangiqi'),
         _listResourceLink('Instagram', 'https://www.instagram.com/bangiqi93'),
         _separatorLine(),
         _sectionHeaderTitle('Resources'),
@@ -38,6 +38,51 @@ class _AboutScreenState extends State<AboutScreen> {
             'flutter_linkify', 'https://pub.dev/packages/flutter_linkify'),
         SizedBox(
           height: 16,
+        )
+      ]),
+    );
+  }
+
+  Widget _userBiographyWidget() {
+    return Container(
+      child: Column(children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(top: 24),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image:
+                                      AssetImage('assets/logo_circle.png')))),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                            "Animep merupakan aplikasi yang menawarkan informasi mengenai daftar manga dan anime.",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.grey[900]))),
+                      ),
+                    ],
+                  )),
+            ],
+          ),
         )
       ]),
     );
@@ -81,7 +126,7 @@ class _AboutScreenState extends State<AboutScreen> {
 
   Widget _listResourceLink(String title, String link) {
     return SizedBox(
-      height: 20,
+      height: 22,
       child: Column(
         children: [
           Padding(
@@ -107,69 +152,6 @@ class _AboutScreenState extends State<AboutScreen> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class _userBiographyWidget extends StatelessWidget {
-  const _userBiographyWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 24),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                  flex: 1,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                          width: 72,
-                          height: 72,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage('assets/me.jpg')))),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text('Rizki Ramdani',
-                            maxLines: 3,
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.poppins(
-                                textStyle: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.grey[900]))),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                            "Hai, my name is Rizki, \ni'm software engineer and cyclist",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.poppins(
-                                textStyle: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.grey[900]))),
-                      ),
-                    ],
-                  )),
-            ],
-          ),
-        )
-      ]),
     );
   }
 }

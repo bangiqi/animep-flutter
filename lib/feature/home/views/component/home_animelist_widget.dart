@@ -66,6 +66,34 @@ class HomeAnimeListWidget extends StatelessWidget {
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.grey[800]))),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                              width: 14,
+                              height: 14,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      fit: BoxFit.fill,
+                                      image:
+                                          AssetImage('assets/icon_star.png')))),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 2, left: 4),
+                            child: Text(
+                                (listAnime[index]
+                                        .attributes
+                                        .getAverageRating() ??
+                                    ''),
+                                style: GoogleFonts.roboto(
+                                    textStyle: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.black54))),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),

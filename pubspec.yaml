@@ -24,4 +24,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/me.jpg
+    - assets/logo_app.png
+    - assets/logo_circle.png
+    - assets/icon_star.png
   uses-material-design: true

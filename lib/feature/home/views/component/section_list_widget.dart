@@ -5,7 +5,7 @@ class SectionListWidget extends StatelessWidget {
   final String title;
 
   static const padding =
-      const EdgeInsets.only(top: 8, left: 16, bottom: 8, right: 8);
+      const EdgeInsets.only(top: 8, left: 16, bottom: 16, right: 8);
   const SectionListWidget({
     Key? key,
     required this.title,
@@ -24,15 +24,17 @@ class SectionListWidget extends StatelessWidget {
                 textStyle:
                     TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
           ),
-          TextButton(
-              onPressed: () {},
-              child: Text(
-                'see all',
-                style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.yellow[900],
-                    fontWeight: FontWeight.normal),
-              ))
+          Visibility(
+              visible: false,
+              child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'see all',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.yellow[900],
+                        fontWeight: FontWeight.normal),
+                  )))
         ],
       ),
     );

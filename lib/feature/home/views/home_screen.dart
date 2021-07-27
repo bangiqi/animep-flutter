@@ -1,12 +1,13 @@
 import 'package:animep_flutter/feature/home/interactor/home_interactor.dart';
-import 'package:animep_flutter/feature/home/views/home_animelist_widget.dart';
-import 'package:animep_flutter/feature/home/views/searchbar_textfield_widget.dart';
-import 'package:animep_flutter/feature/home/views/section_list_widget.dart';
+import 'package:animep_flutter/feature/home/views/component/home_animelist_widget.dart';
 import 'package:animep_flutter/models/Anime.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:http/http.dart' as http;
+
+import 'component/searchbar_textfield_widget.dart';
+import 'component/section_list_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen(this.title);
@@ -25,12 +26,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        /*
         // custom searchbar widget
         Padding(
           padding: padding,
           child: SearchBarTextfieldWidget(filter: _filter),
         ),
-
+        */
+        SizedBox(
+          height: 16,
+        ),
         _horizontalAnimeList('Trending Anime', null), // request trending anime
         _horizontalAnimeList('Anime Season Spring', 'spring'),
         _horizontalAnimeList('Anime Season Summer', 'summer'),
@@ -53,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         // horizontal list anime widget
         SizedBox(
-          height: 260.0,
+          height: 275.0,
           child: _animeListFutureBuilder(filter),
         ),
         SizedBox(

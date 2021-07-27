@@ -1,3 +1,4 @@
+import 'package:animep_flutter/feature/base/components/custom_appbar.dart';
 import 'package:animep_flutter/models/Anime.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -17,18 +18,25 @@ class _DetailScreenState extends State<DetailScreen> {
     super.initState();
   }
 
+/*
+AppBar(
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back_ios_new),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              title: Text(widget.anime.attributes.canonicalTitle),
+            )
+*/
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primaryColor: Colors.red),
         home: Scaffold(
-            appBar: AppBar(
-              leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios_new),
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-              title: Text(widget.anime.attributes.canonicalTitle),
+            appBar: CustomAppBar(
+              title: widget.anime.attributes.canonicalTitle,
+              isDetail: true,
+              context: context,
             ),
             body: SingleChildScrollView(
               child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[

@@ -1,5 +1,5 @@
-import 'package:animep_flutter/feature/home/views/home_animelist_widget.dart';
-import 'package:animep_flutter/feature/home/views/section_list_widget.dart';
+import 'package:animep_flutter/feature/home/views/component/home_animelist_widget.dart';
+import 'package:animep_flutter/feature/home/views/component/section_list_widget.dart';
 import 'package:animep_flutter/feature/manga/interactor/manga_interactor.dart';
 import 'package:animep_flutter/models/Anime.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,6 +23,9 @@ class _MangaScreenState extends State<MangaScreen> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        SizedBox(
+          height: 16,
+        ),
         _horizontalMangaList(isTrending: true),
         _horizontalMangaList(title: 'Manga'),
         SizedBox(
@@ -41,7 +44,7 @@ class _MangaScreenState extends State<MangaScreen> {
         ),
         // horizontal list anime widget
         SizedBox(
-          height: 260.0,
+          height: 270.0,
           child: (isTrending) ? _listTrendingManga() : _listManga(),
         ),
         SizedBox(
