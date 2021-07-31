@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSize {
   final String title;
-  bool isDetail;
+  final bool isDetail;
   final BuildContext context;
 
   CustomAppBar(
@@ -55,6 +55,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSize {
   }
 
   @override
-  // TODO: implement child
   Widget get child => throw UnimplementedError();
 }
