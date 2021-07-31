@@ -3,10 +3,8 @@ import 'package:animep_flutter/feature/home/views/component/home_animelist_widge
 import 'package:animep_flutter/models/Anime.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:http/http.dart' as http;
 
-import 'component/searchbar_textfield_widget.dart';
 import 'component/section_list_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,10 +16,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final TextEditingController _filter = new TextEditingController();
-  static const padding =
-      const EdgeInsets.only(top: 16, left: 16, bottom: 0, right: 16);
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

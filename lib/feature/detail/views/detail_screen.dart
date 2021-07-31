@@ -31,7 +31,7 @@ AppBar(
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(primaryColor: Colors.red),
+        theme: ThemeData(primaryColor: Colors.white),
         home: Scaffold(
             appBar: CustomAppBar(
               title: widget.anime.attributes.canonicalTitle,

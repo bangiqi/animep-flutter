@@ -6,9 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class MainTabBarScreen extends StatefulWidget {
-  MainTabBarScreen(this.title);
-  final String title;
-
   @override
   _MainTabBarState createState() => _MainTabBarState();
 }

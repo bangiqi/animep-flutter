@@ -4,7 +4,6 @@ import 'package:animep_flutter/feature/manga/interactor/manga_interactor.dart';
 import 'package:animep_flutter/models/Anime.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:http/http.dart' as http;
 
 class MangaScreen extends StatefulWidget {
@@ -16,9 +15,6 @@ class MangaScreen extends StatefulWidget {
 }
 
 class _MangaScreenState extends State<MangaScreen> {
-  static const padding =
-      const EdgeInsets.only(top: 16, left: 16, bottom: 0, right: 16);
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

@@ -12,9 +12,6 @@ class AboutScreen extends StatefulWidget {
 }
 
 class _AboutScreenState extends State<AboutScreen> {
-  static const padding =
-      const EdgeInsets.only(top: 16, left: 16, bottom: 0, right: 16);
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -145,7 +142,7 @@ class _AboutScreenState extends State<AboutScreen> {
                           throw 'Could not launch $link';
                         }
                       },
-                      text: "${title} : ${link}",
+                      text: "$title : $link",
                       style: TextStyle(fontSize: 12)),
                 ),
               ],
