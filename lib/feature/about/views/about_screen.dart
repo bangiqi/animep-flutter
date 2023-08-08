@@ -136,10 +136,14 @@ class _AboutScreenState extends State<AboutScreen> {
                   flex: 1,
                   child: Linkify(
                       onOpen: (link) async {
-                        if (await canLaunch(link.url)) {
-                          await launch(link.url);
-                        } else {
-                          throw 'Could not launch $link';
+                        // if (await canLaunch(link.url)) {
+                        //   await launch(link.url);
+                        // } else {
+                        //   throw 'Could not launch $link';
+                        // }
+
+                        if (await launchUrl(Uri.parse(link.url))) {
+                          throw Exception('Could not launch ${link.url}');
                         }
                       },
                       text: "$title : $link",

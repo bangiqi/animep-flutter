@@ -3,7 +3,6 @@ import 'package:animep_flutter/feature/base/components/custom_appbar.dart';
 import 'package:animep_flutter/feature/home/views/home_screen.dart';
 import 'package:animep_flutter/feature/manga/views/manga_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MainTabBarScreen extends StatefulWidget {
   @override

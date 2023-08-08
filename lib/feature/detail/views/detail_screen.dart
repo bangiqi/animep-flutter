@@ -1,7 +1,6 @@
 import 'package:animep_flutter/feature/base/components/custom_appbar.dart';
 import 'package:animep_flutter/models/Anime.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailScreen extends StatefulWidget {

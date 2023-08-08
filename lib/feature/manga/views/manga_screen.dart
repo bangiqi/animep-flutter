@@ -3,7 +3,6 @@ import 'package:animep_flutter/feature/home/views/component/section_list_widget.
 import 'package:animep_flutter/feature/manga/interactor/manga_interactor.dart';
 import 'package:animep_flutter/models/Anime.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class MangaScreen extends StatefulWidget {

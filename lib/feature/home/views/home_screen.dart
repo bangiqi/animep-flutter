@@ -2,7 +2,6 @@ import 'package:animep_flutter/feature/home/interactor/home_interactor.dart';
 import 'package:animep_flutter/feature/home/views/component/home_animelist_widget.dart';
 import 'package:animep_flutter/models/Anime.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'component/section_list_widget.dart';
